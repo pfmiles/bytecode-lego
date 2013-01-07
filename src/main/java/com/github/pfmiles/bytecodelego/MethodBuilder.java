@@ -35,11 +35,6 @@ public class MethodBuilder {
         return this;
     }
 
-    public MethodBuilder ldc(Object con) {
-        this.methodVisitor.visitLdcInsn(con);
-        return this;
-    }
-
     public MethodBuilder getstatic(String owner, String name, String desc) {
         this.methodVisitor.visitFieldInsn(Opcodes.GETSTATIC, owner, name, desc);
         return this;
@@ -334,6 +329,31 @@ public class MethodBuilder {
 
     public MethodBuilder dconst_1() {
         this.methodVisitor.visitInsn(Opcodes.DCONST_1);
+        return this;
+    }
+
+    public MethodBuilder bipush(int operand) {
+        this.methodVisitor.visitIntInsn(Opcodes.BIPUSH, operand);
+        return this;
+    }
+
+    public MethodBuilder sipush(int operand) {
+        this.methodVisitor.visitIntInsn(Opcodes.SIPUSH, operand);
+        return this;
+    }
+
+    public MethodBuilder ldc(Object cst) {
+        this.methodVisitor.visitLdcInsn(cst);
+        return this;
+    }
+
+    public MethodBuilder ldc_w(Object cst) {
+        this.methodVisitor.visitLdcInsn(cst);
+        return this;
+    }
+
+    public MethodBuilder ldc2_w(Object cst) {
+        this.methodVisitor.visitLdcInsn(cst);
         return this;
     }
 }
