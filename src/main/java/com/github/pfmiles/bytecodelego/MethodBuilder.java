@@ -89,7 +89,7 @@ public class MethodBuilder {
      *     // int ALOAD_1 = 43; // -
      *     // int ALOAD_2 = 44; // -
      *     // int ALOAD_3 = 45; // -
-     *     int IALOAD = 46; // visitInsn
+     *     int IALOAD = 46; // visitInsn array load
      *     int LALOAD = 47; // -
      *     int FALOAD = 48; // -
      *     int DALOAD = 49; // -
@@ -97,7 +97,7 @@ public class MethodBuilder {
      *     int BALOAD = 51; // -
      *     int CALOAD = 52; // -
      *     int SALOAD = 53; // -
-     *     int ISTORE = 54; // visitVarInsn
+     *     int ISTORE = 54; // visitVarInsn store
      *     int LSTORE = 55; // -
      *     int FSTORE = 56; // -
      *     int DSTORE = 57; // -
@@ -122,7 +122,7 @@ public class MethodBuilder {
      *     // int ASTORE_1 = 76; // -
      *     // int ASTORE_2 = 77; // -
      *     // int ASTORE_3 = 78; // -
-     *     int IASTORE = 79; // visitInsn
+     *     int IASTORE = 79; // visitInsn array store and arithmatic
      *     int LASTORE = 80; // -
      *     int FASTORE = 81; // -
      *     int DASTORE = 82; // -
@@ -176,7 +176,7 @@ public class MethodBuilder {
      *     int IXOR = 130; // -
      *     int LXOR = 131; // -
      *     int IINC = 132; // visitIincInsn
-     *     int I2L = 133; // visitInsn
+     *     int I2L = 133; // visitInsn conversion and compare
      *     int I2F = 134; // -
      *     int I2D = 135; // -
      *     int L2I = 136; // -
@@ -212,10 +212,10 @@ public class MethodBuilder {
      *     int IF_ACMPNE = 166; // -
      *     int GOTO = 167; // -
      *     int JSR = 168; // -
-     *     int RET = 169; // visitVarInsn
+     *     int RET = 169; // visitVarInsn ret
      *     int TABLESWITCH = 170; // visiTableSwitchInsn
      *     int LOOKUPSWITCH = 171; // visitLookupSwitch
-     *     int IRETURN = 172; // visitInsn
+     *     int IRETURN = 172; // visitInsn return
      *     int LRETURN = 173; // -
      *     int FRETURN = 174; // -
      *     int DRETURN = 175; // -
@@ -230,18 +230,18 @@ public class MethodBuilder {
      *     int INVOKESTATIC = 184; // -
      *     int INVOKEINTERFACE = 185; // -
      *     // int UNUSED = 186; // NOT VISITED
-     *     int NEW = 187; // visitTypeInsn
-     *     int NEWARRAY = 188; // visitIntInsn
-     *     int ANEWARRAY = 189; // visitTypeInsn
-     *     int ARRAYLENGTH = 190; // visitInsn
+     *     int NEW = 187; // visitTypeInsn new
+     *     int NEWARRAY = 188; // visitIntInsn new primitive array
+     *     int ANEWARRAY = 189; // visitTypeInsn new reference array
+     *     int ARRAYLENGTH = 190; // visitInsn arr length
      *     int ATHROW = 191; // -
-     *     int CHECKCAST = 192; // visitTypeInsn
+     *     int CHECKCAST = 192; // visitTypeInsn cast
      *     int INSTANCEOF = 193; // -
-     *     int MONITORENTER = 194; // visitInsn
+     *     int MONITORENTER = 194; // visitInsn monitor
      *     int MONITOREXIT = 195; // -
      *     // int WIDE = 196; // NOT VISITED
      *     int MULTIANEWARRAY = 197; // visitMultiANewArrayInsn
-     *     int IFNULL = 198; // visitJumpInsn
+     *     int IFNULL = 198; // visitJumpInsn goto
      *     int IFNONNULL = 199; // -
      *     // int GOTO_W = 200; // -
      *     // int JSR_W = 201; // -
@@ -474,6 +474,46 @@ public class MethodBuilder {
 
     public MethodBuilder aload_3() {
         this.methodVisitor.visitVarInsn(Opcodes.ALOAD, 3);
+        return this;
+    }
+
+    public MethodBuilder iaload() {
+        this.methodVisitor.visitInsn(Opcodes.IALOAD);
+        return this;
+    }
+
+    public MethodBuilder laload() {
+        this.methodVisitor.visitInsn(Opcodes.LALOAD);
+        return this;
+    }
+
+    public MethodBuilder faload() {
+        this.methodVisitor.visitInsn(Opcodes.FALOAD);
+        return this;
+    }
+
+    public MethodBuilder daload() {
+        this.methodVisitor.visitInsn(Opcodes.DALOAD);
+        return this;
+    }
+
+    public MethodBuilder aaload() {
+        this.methodVisitor.visitInsn(Opcodes.AALOAD);
+        return this;
+    }
+
+    public MethodBuilder baload() {
+        this.methodVisitor.visitInsn(Opcodes.BALOAD);
+        return this;
+    }
+
+    public MethodBuilder caload() {
+        this.methodVisitor.visitInsn(Opcodes.CALOAD);
+        return this;
+    }
+
+    public MethodBuilder saload() {
+        this.methodVisitor.visitInsn(Opcodes.SALOAD);
         return this;
     }
 }
