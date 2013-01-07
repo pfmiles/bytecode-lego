@@ -38,7 +38,7 @@ public class ClsBuilder {
         this.clsWriter = new ClassWriter(flags);
         this.methodDefs = new ArrayList<MethodDef>();
         this.fieldVisitors = new ArrayList<FieldVisitor>();
-        // acc_super added by default
+        // 'acc_super' added by default
         this.clsWriter.visit(version, access | Opcodes.ACC_SUPER, name, signature, superName, interfaces);
     }
 

@@ -15,28 +15,39 @@ public class MethodBuilder {
         this.methodVisitor = methodVisitor;
     }
 
-    public void aload_0() {
+    public MethodBuilder aload_0() {
         this.methodVisitor.visitVarInsn(Opcodes.ALOAD, 0);
+        return this;
     }
 
-    public void return_() {
+    public MethodBuilder return_() {
         this.methodVisitor.visitInsn(Opcodes.RETURN);
+        return this;
     }
 
-    public void invokespecial(String owner, String name, String desc) {
+    public MethodBuilder invokespecial(String owner, String name, String desc) {
         this.methodVisitor.visitMethodInsn(Opcodes.INVOKESPECIAL, owner, name, desc);
+        return this;
     }
 
-    public void invokevirtual(String owner, String name, String desc) {
+    public MethodBuilder invokevirtual(String owner, String name, String desc) {
         this.methodVisitor.visitMethodInsn(Opcodes.INVOKEVIRTUAL, owner, name, desc);
+        return this;
     }
 
-    public void ldc(Object con) {
+    public MethodBuilder ldc(Object con) {
         this.methodVisitor.visitLdcInsn(con);
+        return this;
     }
 
-    public void getstatic(String owner, String name, String desc) {
+    public MethodBuilder getstatic(String owner, String name, String desc) {
         this.methodVisitor.visitFieldInsn(Opcodes.GETSTATIC, owner, name, desc);
+        return this;
+    }
+
+    public MethodBuilder checkcast(String type) {
+        this.methodVisitor.visitTypeInsn(Opcodes.CHECKCAST, type);
+        return this;
     }
 
     /**
@@ -246,5 +257,83 @@ public class MethodBuilder {
      *     // int JSR_W = 201; // -
      * </pre>
      */
+    public MethodBuilder nop() {
+        this.methodVisitor.visitInsn(Opcodes.NOP);
+        return this;
+    }
 
+    public MethodBuilder aconst_null() {
+        this.methodVisitor.visitInsn(Opcodes.ACONST_NULL);
+        return this;
+    }
+
+    public MethodBuilder iconst_m1() {
+        this.methodVisitor.visitInsn(Opcodes.ICONST_M1);
+        return this;
+    }
+
+    public MethodBuilder iconst_0() {
+        this.methodVisitor.visitInsn(Opcodes.ICONST_0);
+        return this;
+    }
+
+    public MethodBuilder iconst_1() {
+        this.methodVisitor.visitInsn(Opcodes.ICONST_1);
+        return this;
+    }
+
+    public MethodBuilder iconst_2() {
+        this.methodVisitor.visitInsn(Opcodes.ICONST_2);
+        return this;
+    }
+
+    public MethodBuilder iconst_3() {
+        this.methodVisitor.visitInsn(Opcodes.ICONST_3);
+        return this;
+    }
+
+    public MethodBuilder iconst_4() {
+        this.methodVisitor.visitInsn(Opcodes.ICONST_4);
+        return this;
+    }
+
+    public MethodBuilder iconst_5() {
+        this.methodVisitor.visitInsn(Opcodes.ICONST_5);
+        return this;
+    }
+
+    public MethodBuilder lconst_0() {
+        this.methodVisitor.visitInsn(Opcodes.LCONST_0);
+        return this;
+    }
+
+    public MethodBuilder lconst_1() {
+        this.methodVisitor.visitInsn(Opcodes.LCONST_1);
+        return this;
+    }
+
+    public MethodBuilder fconst_0() {
+        this.methodVisitor.visitInsn(Opcodes.FCONST_0);
+        return this;
+    }
+
+    public MethodBuilder fconst_1() {
+        this.methodVisitor.visitInsn(Opcodes.FCONST_1);
+        return this;
+    }
+
+    public MethodBuilder fconst_2() {
+        this.methodVisitor.visitInsn(Opcodes.FCONST_2);
+        return this;
+    }
+
+    public MethodBuilder dconst_0() {
+        this.methodVisitor.visitInsn(Opcodes.DCONST_0);
+        return this;
+    }
+
+    public MethodBuilder dconst_1() {
+        this.methodVisitor.visitInsn(Opcodes.DCONST_1);
+        return this;
+    }
 }
