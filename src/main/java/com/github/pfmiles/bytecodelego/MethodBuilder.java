@@ -15,11 +15,6 @@ public class MethodBuilder {
         this.methodVisitor = methodVisitor;
     }
 
-    public MethodBuilder aload_0() {
-        this.methodVisitor.visitVarInsn(Opcodes.ALOAD, 0);
-        return this;
-    }
-
     public MethodBuilder return_() {
         this.methodVisitor.visitInsn(Opcodes.RETURN);
         return this;
@@ -354,6 +349,131 @@ public class MethodBuilder {
 
     public MethodBuilder ldc2_w(Object cst) {
         this.methodVisitor.visitLdcInsn(cst);
+        return this;
+    }
+
+    public MethodBuilder iload(int var) {
+        this.methodVisitor.visitVarInsn(Opcodes.ILOAD, var);
+        return this;
+    }
+
+    public MethodBuilder lload(int var) {
+        this.methodVisitor.visitVarInsn(Opcodes.LLOAD, var);
+        return this;
+    }
+
+    public MethodBuilder fload(int var) {
+        this.methodVisitor.visitVarInsn(Opcodes.FLOAD, var);
+        return this;
+    }
+
+    public MethodBuilder dload(int var) {
+        this.methodVisitor.visitVarInsn(Opcodes.DLOAD, var);
+        return this;
+    }
+
+    public MethodBuilder aload(int var) {
+        this.methodVisitor.visitVarInsn(Opcodes.ALOAD, var);
+        return this;
+    }
+
+    public MethodBuilder iload_0() {
+        this.methodVisitor.visitVarInsn(Opcodes.ILOAD, 0);
+        return this;
+    }
+
+    public MethodBuilder iload_1() {
+        this.methodVisitor.visitVarInsn(Opcodes.ILOAD, 1);
+        return this;
+    }
+
+    public MethodBuilder iload_2() {
+        this.methodVisitor.visitVarInsn(Opcodes.ILOAD, 2);
+        return this;
+    }
+
+    public MethodBuilder iload_3() {
+        this.methodVisitor.visitVarInsn(Opcodes.ILOAD, 3);
+        return this;
+    }
+
+    public MethodBuilder lload_0() {
+        this.methodVisitor.visitVarInsn(Opcodes.LLOAD, 0);
+        return this;
+    }
+
+    public MethodBuilder lload_1() {
+        this.methodVisitor.visitVarInsn(Opcodes.LLOAD, 1);
+        return this;
+    }
+
+    public MethodBuilder lload_2() {
+        this.methodVisitor.visitVarInsn(Opcodes.LLOAD, 2);
+        return this;
+    }
+
+    public MethodBuilder lload_3() {
+        this.methodVisitor.visitVarInsn(Opcodes.LLOAD, 3);
+        return this;
+    }
+
+    public MethodBuilder fload_0() {
+        this.methodVisitor.visitVarInsn(Opcodes.FLOAD, 0);
+        return this;
+    }
+
+    public MethodBuilder fload_1() {
+        this.methodVisitor.visitVarInsn(Opcodes.FLOAD, 1);
+        return this;
+    }
+
+    public MethodBuilder fload_2() {
+        this.methodVisitor.visitVarInsn(Opcodes.FLOAD, 2);
+        return this;
+    }
+
+    public MethodBuilder fload_3() {
+        this.methodVisitor.visitVarInsn(Opcodes.FLOAD, 3);
+        return this;
+    }
+
+    public MethodBuilder dload_0() {
+        this.methodVisitor.visitVarInsn(Opcodes.DLOAD, 0);
+        return this;
+    }
+
+    public MethodBuilder dload_1() {
+        this.methodVisitor.visitVarInsn(Opcodes.DLOAD, 1);
+        return this;
+    }
+
+    public MethodBuilder dload_2() {
+        this.methodVisitor.visitVarInsn(Opcodes.DLOAD, 2);
+        return this;
+    }
+
+    public MethodBuilder dload_3() {
+        this.methodVisitor.visitVarInsn(Opcodes.DLOAD, 3);
+        return this;
+    }
+
+    public MethodBuilder aload_0() {
+        this.methodVisitor.visitVarInsn(Opcodes.ALOAD, 0);
+        return this;
+    }
+
+    public MethodBuilder aload_1() {
+        this.methodVisitor.visitVarInsn(Opcodes.ALOAD, 1);
+        return this;
+    }
+
+    public MethodBuilder aload_2() {
+        this.methodVisitor.visitVarInsn(Opcodes.ALOAD, 2);
+        return this;
+    }
+
+    public MethodBuilder aload_3() {
+        this.methodVisitor.visitVarInsn(Opcodes.ALOAD, 3);
         return this;
     }
 }
