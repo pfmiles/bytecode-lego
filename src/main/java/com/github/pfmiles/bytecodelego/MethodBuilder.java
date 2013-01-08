@@ -1,5 +1,6 @@
 package com.github.pfmiles.bytecodelego;
 
+import org.objectweb.asm.Label;
 import org.objectweb.asm.MethodVisitor;
 import org.objectweb.asm.Opcodes;
 
@@ -1009,6 +1010,86 @@ public class MethodBuilder {
 
     public MethodBuilder dcmpg() {
         this.methodVisitor.visitInsn(Opcodes.DCMPG);
+        return this;
+    }
+
+    public MethodBuilder ifeq(Label label) {
+        this.methodVisitor.visitJumpInsn(Opcodes.IFEQ, label);
+        return this;
+    }
+
+    public MethodBuilder ifne(Label label) {
+        this.methodVisitor.visitJumpInsn(Opcodes.IFNE, label);
+        return this;
+    }
+
+    public MethodBuilder iflt(Label label) {
+        this.methodVisitor.visitJumpInsn(Opcodes.IFLT, label);
+        return this;
+    }
+
+    public MethodBuilder ifge(Label label) {
+        this.methodVisitor.visitJumpInsn(Opcodes.IFGE, label);
+        return this;
+    }
+
+    public MethodBuilder ifgt(Label label) {
+        this.methodVisitor.visitJumpInsn(Opcodes.IFGT, label);
+        return this;
+    }
+
+    public MethodBuilder ifle(Label label) {
+        this.methodVisitor.visitJumpInsn(Opcodes.IFLE, label);
+        return this;
+    }
+
+    public MethodBuilder if_icmpeq(Label label) {
+        this.methodVisitor.visitJumpInsn(Opcodes.IF_ICMPEQ, label);
+        return this;
+    }
+
+    public MethodBuilder if_icmpne(Label label) {
+        this.methodVisitor.visitJumpInsn(Opcodes.IF_ICMPNE, label);
+        return this;
+    }
+
+    public MethodBuilder if_icmplt(Label label) {
+        this.methodVisitor.visitJumpInsn(Opcodes.IF_ICMPLT, label);
+        return this;
+    }
+
+    public MethodBuilder if_icmpge(Label label) {
+        this.methodVisitor.visitJumpInsn(Opcodes.IF_ICMPGE, label);
+        return this;
+    }
+
+    public MethodBuilder if_icmpgt(Label label) {
+        this.methodVisitor.visitJumpInsn(Opcodes.IF_ICMPGT, label);
+        return this;
+    }
+
+    public MethodBuilder if_icmple(Label label) {
+        this.methodVisitor.visitJumpInsn(Opcodes.IF_ICMPLE, label);
+        return this;
+    }
+
+    public MethodBuilder if_acmpeq(Label label) {
+        this.methodVisitor.visitJumpInsn(Opcodes.IF_ACMPEQ, label);
+        return this;
+    }
+
+    public MethodBuilder if_acmpne(Label label) {
+        this.methodVisitor.visitJumpInsn(Opcodes.IF_ACMPNE, label);
+        return this;
+    }
+
+    public MethodBuilder goto_(Label label) {
+        this.methodVisitor.visitJumpInsn(Opcodes.GOTO, label);
+        return this;
+    }
+
+    public MethodBuilder jsr(Label label) {
+        this.methodVisitor.visitJumpInsn(Opcodes.JSR, label);
         return this;
     }
 }
