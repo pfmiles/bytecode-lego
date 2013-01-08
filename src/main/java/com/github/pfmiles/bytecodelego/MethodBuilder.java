@@ -642,24 +642,6 @@ public class MethodBuilder {
         return this;
     }
 
-    /*
-     * int IASTORE = 79; // visitInsn array store and arithmatic int LASTORE =
-     * 80; // - int FASTORE = 81; // - int DASTORE = 82; // - int AASTORE = 83;
-     * // - int BASTORE = 84; // - int CASTORE = 85; // - int SASTORE = 86; // -
-     * int POP = 87; // - int POP2 = 88; // - int DUP = 89; // - int DUP_X1 =
-     * 90; // - int DUP_X2 = 91; // - int DUP2 = 92; // - int DUP2_X1 = 93; // -
-     * int DUP2_X2 = 94; // - int SWAP = 95; // - int IADD = 96; // - int LADD =
-     * 97; // - int FADD = 98; // - int DADD = 99; // - int ISUB = 100; // - int
-     * LSUB = 101; // - int FSUB = 102; // - int DSUB = 103; // - int IMUL =
-     * 104; // - int LMUL = 105; // - int FMUL = 106; // - int DMUL = 107; // -
-     * int IDIV = 108; // - int LDIV = 109; // - int FDIV = 110; // - int DDIV =
-     * 111; // - int IREM = 112; // - int LREM = 113; // - int FREM = 114; // -
-     * int DREM = 115; // - int INEG = 116; // - int LNEG = 117; // - int FNEG =
-     * 118; // - int DNEG = 119; // - int ISHL = 120; // - int LSHL = 121; // -
-     * int ISHR = 122; // - int LSHR = 123; // - int IUSHR = 124; // - int LUSHR
-     * = 125; // - int IAND = 126; // - int LAND = 127; // - int IOR = 128; // -
-     * int LOR = 129; // - int IXOR = 130; // - int LXOR = 131; // -
-     */
     public MethodBuilder iastore() {
         this.methodVisitor.visitInsn(Opcodes.IASTORE);
         return this;
@@ -742,6 +724,186 @@ public class MethodBuilder {
 
     public MethodBuilder swap() {
         this.methodVisitor.visitInsn(Opcodes.SWAP);
+        return this;
+    }
+
+    public MethodBuilder iadd() {
+        this.methodVisitor.visitInsn(Opcodes.IADD);
+        return this;
+    }
+
+    public MethodBuilder ladd() {
+        this.methodVisitor.visitInsn(Opcodes.LADD);
+        return this;
+    }
+
+    public MethodBuilder fadd() {
+        this.methodVisitor.visitInsn(Opcodes.FADD);
+        return this;
+    }
+
+    public MethodBuilder dadd() {
+        this.methodVisitor.visitInsn(Opcodes.DADD);
+        return this;
+    }
+
+    public MethodBuilder isub() {
+        this.methodVisitor.visitInsn(Opcodes.ISUB);
+        return this;
+    }
+
+    public MethodBuilder lsub() {
+        this.methodVisitor.visitInsn(Opcodes.LSUB);
+        return this;
+    }
+
+    public MethodBuilder fsub() {
+        this.methodVisitor.visitInsn(Opcodes.FSUB);
+        return this;
+    }
+
+    public MethodBuilder dsub() {
+        this.methodVisitor.visitInsn(Opcodes.DSUB);
+        return this;
+    }
+
+    public MethodBuilder imul() {
+        this.methodVisitor.visitInsn(Opcodes.IMUL);
+        return this;
+    }
+
+    public MethodBuilder lmul() {
+        this.methodVisitor.visitInsn(Opcodes.LMUL);
+        return this;
+    }
+
+    public MethodBuilder fmul() {
+        this.methodVisitor.visitInsn(Opcodes.FMUL);
+        return this;
+    }
+
+    public MethodBuilder dmul() {
+        this.methodVisitor.visitInsn(Opcodes.DMUL);
+        return this;
+    }
+
+    public MethodBuilder idiv() {
+        this.methodVisitor.visitInsn(Opcodes.IDIV);
+        return this;
+    }
+
+    public MethodBuilder ldiv() {
+        this.methodVisitor.visitInsn(Opcodes.LDIV);
+        return this;
+    }
+
+    public MethodBuilder fdiv() {
+        this.methodVisitor.visitInsn(Opcodes.FDIV);
+        return this;
+    }
+
+    public MethodBuilder ddiv() {
+        this.methodVisitor.visitInsn(Opcodes.DDIV);
+        return this;
+    }
+
+    public MethodBuilder irem() {
+        this.methodVisitor.visitInsn(Opcodes.IREM);
+        return this;
+    }
+
+    public MethodBuilder lrem() {
+        this.methodVisitor.visitInsn(Opcodes.LREM);
+        return this;
+    }
+
+    public MethodBuilder frem() {
+        this.methodVisitor.visitInsn(Opcodes.FREM);
+        return this;
+    }
+
+    public MethodBuilder drem() {
+        this.methodVisitor.visitInsn(Opcodes.DREM);
+        return this;
+    }
+
+    public MethodBuilder ineg() {
+        this.methodVisitor.visitInsn(Opcodes.INEG);
+        return this;
+    }
+
+    public MethodBuilder lneg() {
+        this.methodVisitor.visitInsn(Opcodes.LNEG);
+        return this;
+    }
+
+    public MethodBuilder fneg() {
+        this.methodVisitor.visitInsn(Opcodes.FNEG);
+        return this;
+    }
+
+    public MethodBuilder dneg() {
+        this.methodVisitor.visitInsn(Opcodes.DNEG);
+        return this;
+    }
+
+    public MethodBuilder ishl() {
+        this.methodVisitor.visitInsn(Opcodes.ISHL);
+        return this;
+    }
+
+    public MethodBuilder lshl() {
+        this.methodVisitor.visitInsn(Opcodes.LSHL);
+        return this;
+    }
+
+    public MethodBuilder ishr() {
+        this.methodVisitor.visitInsn(Opcodes.ISHR);
+        return this;
+    }
+
+    public MethodBuilder lshr() {
+        this.methodVisitor.visitInsn(Opcodes.LSHR);
+        return this;
+    }
+
+    public MethodBuilder iushr() {
+        this.methodVisitor.visitInsn(Opcodes.IUSHR);
+        return this;
+    }
+
+    public MethodBuilder lushr() {
+        this.methodVisitor.visitInsn(Opcodes.LUSHR);
+        return this;
+    }
+
+    public MethodBuilder iand() {
+        this.methodVisitor.visitInsn(Opcodes.IAND);
+        return this;
+    }
+
+    public MethodBuilder land() {
+        this.methodVisitor.visitInsn(Opcodes.LAND);
+        return this;
+    }
+
+    public MethodBuilder ior() {
+        this.methodVisitor.visitInsn(Opcodes.IOR);
+        return this;
+    }
+
+    public MethodBuilder lor() {
+        this.methodVisitor.visitInsn(Opcodes.LOR);
+        return this;
+    }
+
+    public MethodBuilder ixor() {
+        this.methodVisitor.visitInsn(Opcodes.IXOR);
+        return this;
+    }
+
+    public MethodBuilder lxor() {
+        this.methodVisitor.visitInsn(Opcodes.LXOR);
         return this;
     }
 }
