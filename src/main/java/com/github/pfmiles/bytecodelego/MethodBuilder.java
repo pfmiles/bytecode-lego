@@ -906,4 +906,109 @@ public class MethodBuilder {
         this.methodVisitor.visitInsn(Opcodes.LXOR);
         return this;
     }
+
+    public MethodBuilder iinc(int var, int increment) {
+        this.methodVisitor.visitIincInsn(var, increment);
+        return this;
+    }
+
+    public MethodBuilder i2l() {
+        this.methodVisitor.visitInsn(Opcodes.I2L);
+        return this;
+    }
+
+    public MethodBuilder i2f() {
+        this.methodVisitor.visitInsn(Opcodes.I2F);
+        return this;
+    }
+
+    public MethodBuilder i2d() {
+        this.methodVisitor.visitInsn(Opcodes.I2D);
+        return this;
+    }
+
+    public MethodBuilder l2i() {
+        this.methodVisitor.visitInsn(Opcodes.L2I);
+        return this;
+    }
+
+    public MethodBuilder l2f() {
+        this.methodVisitor.visitInsn(Opcodes.L2F);
+        return this;
+    }
+
+    public MethodBuilder l2d() {
+        this.methodVisitor.visitInsn(Opcodes.L2D);
+        return this;
+    }
+
+    public MethodBuilder f2i() {
+        this.methodVisitor.visitInsn(Opcodes.F2I);
+        return this;
+    }
+
+    public MethodBuilder f2l() {
+        this.methodVisitor.visitInsn(Opcodes.F2L);
+        return this;
+    }
+
+    public MethodBuilder f2d() {
+        this.methodVisitor.visitInsn(Opcodes.F2D);
+        return this;
+    }
+
+    public MethodBuilder d2i() {
+        this.methodVisitor.visitInsn(Opcodes.D2I);
+        return this;
+    }
+
+    public MethodBuilder d2l() {
+        this.methodVisitor.visitInsn(Opcodes.D2L);
+        return this;
+    }
+
+    public MethodBuilder d2f() {
+        this.methodVisitor.visitInsn(Opcodes.D2F);
+        return this;
+    }
+
+    public MethodBuilder i2b() {
+        this.methodVisitor.visitInsn(Opcodes.I2B);
+        return this;
+    }
+
+    public MethodBuilder i2c() {
+        this.methodVisitor.visitInsn(Opcodes.I2C);
+        return this;
+    }
+
+    public MethodBuilder i2s() {
+        this.methodVisitor.visitInsn(Opcodes.I2S);
+        return this;
+    }
+
+    public MethodBuilder lcmp() {
+        this.methodVisitor.visitInsn(Opcodes.LCMP);
+        return this;
+    }
+
+    public MethodBuilder fcmpl() {
+        this.methodVisitor.visitInsn(Opcodes.FCMPL);
+        return this;
+    }
+
+    public MethodBuilder fcmpg() {
+        this.methodVisitor.visitInsn(Opcodes.FCMPG);
+        return this;
+    }
+
+    public MethodBuilder dcmpl() {
+        this.methodVisitor.visitInsn(Opcodes.DCMPL);
+        return this;
+    }
+
+    public MethodBuilder dcmpg() {
+        this.methodVisitor.visitInsn(Opcodes.DCMPG);
+        return this;
+    }
 }
