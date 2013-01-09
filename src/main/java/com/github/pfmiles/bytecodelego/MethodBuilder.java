@@ -16,11 +16,6 @@ public class MethodBuilder {
         this.methodVisitor = methodVisitor;
     }
 
-    public MethodBuilder return_() {
-        this.methodVisitor.visitInsn(Opcodes.RETURN);
-        return this;
-    }
-
     public MethodBuilder invokespecial(String owner, String name, String desc) {
         this.methodVisitor.visitMethodInsn(Opcodes.INVOKESPECIAL, owner, name, desc);
         return this;
@@ -1090,6 +1085,51 @@ public class MethodBuilder {
 
     public MethodBuilder jsr(Label label) {
         this.methodVisitor.visitJumpInsn(Opcodes.JSR, label);
+        return this;
+    }
+
+    public MethodBuilder ret(int var) {
+        this.methodVisitor.visitVarInsn(Opcodes.RET, var);
+        return this;
+    }
+
+    public MethodBuilder tableswitch(int var) {
+        this.methodVisitor.visitVarInsn(Opcodes.TABLESWITCH, var);
+        return this;
+    }
+
+    public MethodBuilder lookupswitch(int var) {
+        this.methodVisitor.visitVarInsn(Opcodes.LOOKUPSWITCH, var);
+        return this;
+    }
+
+    public MethodBuilder ireturn() {
+        this.methodVisitor.visitInsn(Opcodes.IRETURN);
+        return this;
+    }
+
+    public MethodBuilder lreturn() {
+        this.methodVisitor.visitInsn(Opcodes.LRETURN);
+        return this;
+    }
+
+    public MethodBuilder freturn() {
+        this.methodVisitor.visitInsn(Opcodes.FRETURN);
+        return this;
+    }
+
+    public MethodBuilder dreturn() {
+        this.methodVisitor.visitInsn(Opcodes.DRETURN);
+        return this;
+    }
+
+    public MethodBuilder areturn() {
+        this.methodVisitor.visitInsn(Opcodes.ARETURN);
+        return this;
+    }
+
+    public MethodBuilder return_() {
+        this.methodVisitor.visitInsn(Opcodes.RETURN);
         return this;
     }
 }
