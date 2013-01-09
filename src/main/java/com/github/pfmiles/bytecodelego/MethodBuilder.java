@@ -1,5 +1,6 @@
 package com.github.pfmiles.bytecodelego;
 
+import org.objectweb.asm.Handle;
 import org.objectweb.asm.Label;
 import org.objectweb.asm.MethodVisitor;
 import org.objectweb.asm.Opcodes;
@@ -14,21 +15,6 @@ public class MethodBuilder {
 
     public MethodBuilder(MethodVisitor methodVisitor) {
         this.methodVisitor = methodVisitor;
-    }
-
-    public MethodBuilder invokespecial(String owner, String name, String desc) {
-        this.methodVisitor.visitMethodInsn(Opcodes.INVOKESPECIAL, owner, name, desc);
-        return this;
-    }
-
-    public MethodBuilder invokevirtual(String owner, String name, String desc) {
-        this.methodVisitor.visitMethodInsn(Opcodes.INVOKEVIRTUAL, owner, name, desc);
-        return this;
-    }
-
-    public MethodBuilder getstatic(String owner, String name, String desc) {
-        this.methodVisitor.visitFieldInsn(Opcodes.GETSTATIC, owner, name, desc);
-        return this;
     }
 
     public MethodBuilder checkcast(String type) {
@@ -1130,6 +1116,51 @@ public class MethodBuilder {
 
     public MethodBuilder return_() {
         this.methodVisitor.visitInsn(Opcodes.RETURN);
+        return this;
+    }
+
+    public MethodBuilder getstatic(String owner, String name, String desc) {
+        this.methodVisitor.visitFieldInsn(Opcodes.GETSTATIC, owner, name, desc);
+        return this;
+    }
+
+    public MethodBuilder putstatic(String owner, String name, String desc) {
+        this.methodVisitor.visitFieldInsn(Opcodes.PUTSTATIC, owner, name, desc);
+        return this;
+    }
+
+    public MethodBuilder getfield(String owner, String name, String desc) {
+        this.methodVisitor.visitFieldInsn(Opcodes.GETFIELD, owner, name, desc);
+        return this;
+    }
+
+    public MethodBuilder putfield(String owner, String name, String desc) {
+        this.methodVisitor.visitFieldInsn(Opcodes.PUTFIELD, owner, name, desc);
+        return this;
+    }
+
+    public MethodBuilder invokevirtual(String owner, String name, String desc) {
+        this.methodVisitor.visitMethodInsn(Opcodes.INVOKEVIRTUAL, owner, name, desc);
+        return this;
+    }
+
+    public MethodBuilder invokespecial(String owner, String name, String desc) {
+        this.methodVisitor.visitMethodInsn(Opcodes.INVOKESPECIAL, owner, name, desc);
+        return this;
+    }
+
+    public MethodBuilder invokestatic(String owner, String name, String desc) {
+        this.methodVisitor.visitMethodInsn(Opcodes.INVOKESTATIC, owner, name, desc);
+        return this;
+    }
+
+    public MethodBuilder invokeinterface(String owner, String name, String desc) {
+        this.methodVisitor.visitMethodInsn(Opcodes.INVOKEINTERFACE, owner, name, desc);
+        return this;
+    }
+
+    public MethodBuilder invokedynamic(String name, String desc, Handle bsm, Object... bsmArgs) {
+        this.methodVisitor.visitInvokeDynamicInsn(name, desc, bsm, bsmArgs);
         return this;
     }
 }
