@@ -17,11 +17,6 @@ public class MethodBuilder {
         this.methodVisitor = methodVisitor;
     }
 
-    public MethodBuilder checkcast(String type) {
-        this.methodVisitor.visitTypeInsn(Opcodes.CHECKCAST, type);
-        return this;
-    }
-
     /**
      * <pre>
      * opcodes, from asm 4.0:
@@ -1161,6 +1156,41 @@ public class MethodBuilder {
 
     public MethodBuilder invokedynamic(String name, String desc, Handle bsm, Object... bsmArgs) {
         this.methodVisitor.visitInvokeDynamicInsn(name, desc, bsm, bsmArgs);
+        return this;
+    }
+
+    public MethodBuilder new_(String type) {
+        this.methodVisitor.visitTypeInsn(Opcodes.NEW, type);
+        return this;
+    }
+
+    public MethodBuilder newarray(int operand) {
+        this.methodVisitor.visitIntInsn(Opcodes.NEWARRAY, operand);
+        return this;
+    }
+
+    public MethodBuilder anewarray(String type) {
+        this.methodVisitor.visitTypeInsn(Opcodes.ANEWARRAY, type);
+        return this;
+    }
+
+    public MethodBuilder arraylength() {
+        this.methodVisitor.visitInsn(Opcodes.ARRAYLENGTH);
+        return this;
+    }
+
+    public MethodBuilder athrow() {
+        this.methodVisitor.visitInsn(Opcodes.ATHROW);
+        return this;
+    }
+
+    public MethodBuilder checkcast(String type) {
+        this.methodVisitor.visitTypeInsn(Opcodes.CHECKCAST, type);
+        return this;
+    }
+
+    public MethodBuilder instanceof_(String type) {
+        this.methodVisitor.visitTypeInsn(Opcodes.INSTANCEOF, type);
         return this;
     }
 }
