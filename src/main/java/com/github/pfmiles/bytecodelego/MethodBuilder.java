@@ -867,13 +867,13 @@ public class MethodBuilder {
         return this;
     }
 
-    public MethodBuilder tableswitch(int var) {
-        this.methodVisitor.visitVarInsn(Opcodes.TABLESWITCH, var);
+    public MethodBuilder tableswitch(int min, int max, Label defaultLabel, Label otherLabel) {
+        this.methodVisitor.visitTableSwitchInsn(min, max, defaultLabel, otherLabel);
         return this;
     }
 
-    public MethodBuilder lookupswitch(int var) {
-        this.methodVisitor.visitVarInsn(Opcodes.LOOKUPSWITCH, var);
+    public MethodBuilder lookupswitch(Label defaultLabel, int[] keys, Label[] otherLabels) {
+        this.methodVisitor.visitLookupSwitchInsn(defaultLabel, keys, otherLabels);
         return this;
     }
 
@@ -907,8 +907,8 @@ public class MethodBuilder {
         return this;
     }
 
-    public MethodBuilder getstatic(String owner, String name, String desc) {
-        this.methodVisitor.visitFieldInsn(Opcodes.GETSTATIC, owner, name, desc);
+    public MethodBuilder getstatic(String fieldOwnerCls, String fieldName, String fieldDesc) {
+        this.methodVisitor.visitFieldInsn(Opcodes.GETSTATIC, fieldOwnerCls, fieldName, fieldDesc);
         return this;
     }
 
@@ -932,8 +932,8 @@ public class MethodBuilder {
         return this;
     }
 
-    public MethodBuilder invokespecial(String owner, String name, String desc) {
-        this.methodVisitor.visitMethodInsn(Opcodes.INVOKESPECIAL, owner, name, desc);
+    public MethodBuilder invokespecial(String methodOwnerClsName, String methodName, String methodDesc) {
+        this.methodVisitor.visitMethodInsn(Opcodes.INVOKESPECIAL, methodOwnerClsName, methodName, methodDesc);
         return this;
     }
 
@@ -1022,5 +1022,21 @@ public class MethodBuilder {
     public MethodBuilder jsr_w(Label label) {
         this.methodVisitor.visitJumpInsn(Opcodes.JSR, label);
         return this;
+    }
+
+    public MethodBuilder label(Label l) {
+        this.methodVisitor.visitLabel(l);
+        return this;
+    }
+
+    public MethodBuilder tryCatchBlock(Label startLabel, Label endLabel, Label handlerLabel, String exType) {
+        this.methodVisitor.visitTryCatchBlock(startLabel, endLabel, handlerLabel, exType);
+        return this;
+    }
+
+    public Label newLabel() {
+        Label ret = new Label();
+        this.methodVisitor.visitLabel(ret);
+        return ret;
     }
 }
