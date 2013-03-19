@@ -51,6 +51,7 @@ public class ClsBuilder {
     public MethodBuilder newMethod(final int access, final String name, final String desc, final String signature, final String[] exceptions,
             int maxStack, int maxLocals) {
         MethodVisitor mv = this.clsWriter.visitMethod(access, name, desc, signature, exceptions);
+        mv.visitCode();
         this.methodDefs.add(new MethodDef(mv, maxStack, maxLocals));
         return new MethodBuilder(mv);
     }
